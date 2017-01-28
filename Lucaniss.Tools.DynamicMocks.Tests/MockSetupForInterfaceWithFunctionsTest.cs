@@ -14,7 +14,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
     public class MockSetupForInterfaceWithFunctionsTest
     {
         [TestMethod]
-        public void SetupFunction_WithNoArguments_WhenInvokeMethod_InvokeCallbackAndReturnValue()
+        public void SetupFunction_WithNoArguments_WhenInvokeMethod_ThenInvokeCallbackAndReturnValue()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithFunctions>();
@@ -35,7 +35,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
 
 
         [TestMethod]
-        public void SetupFunction_WithArgumentOfValueType_WhenSetupNoMatch_ThrowException()
+        public void SetupFunction_WithArgumentOfValueType_WhenSetupNoMatch_ThenThrowException()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithFunctions>();
@@ -59,7 +59,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupFunction_WithArgumentOfValueType_WhenSetupMatch_InvokeCallbackAndForwardValue()
+        public void SetupFunction_WithArgumentOfValueType_WhenSetupMatch_ThenInvokeCallbackAndForwardValue()
         {
             // Arrange            
             var mock = Mock.Create<ITestInterfaceWithFunctions>();
@@ -80,7 +80,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
 
 
         [TestMethod]
-        public void SetupFunction_WithArgumentOfReferenceType_WhenSetupNoMatch_ThrowException()
+        public void SetupFunction_WithArgumentOfReferenceType_WhenSetupNoMatch_ThenThrowException()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithFunctions>();
@@ -104,7 +104,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupFunction_WithArgumentOfReferenceType_WhenSetupMatch_InvokeCallbackAndForwardValue()
+        public void SetupFunction_WithArgumentOfReferenceType_WhenSetupMatch_ThenInvokeCallbackAndForwardValue()
         {
             // Arrange            
             var mock = Mock.Create<ITestInterfaceWithFunctions>();

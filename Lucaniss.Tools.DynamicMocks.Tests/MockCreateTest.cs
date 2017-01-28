@@ -15,7 +15,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
     public class MockCreateTest
     {
         [TestMethod]
-        public void CreateMock_WhenParameterTypeIsClass_ThrowException()
+        public void CreateMock_WhenParameterTypeIsClass_ThenThrowException()
         {
             // Act
             Action action = () =>
@@ -29,7 +29,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
 
 
         [TestMethod]
-        public void CreateMock_WhenParameterTypeIsInterface_MockIsCreated()
+        public void CreateMock_WhenParameterTypeIsInterface_ThenMockIsCreated()
         {
             // Act
             var mock = Mock.Create<ITestInterface>();
@@ -40,7 +40,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void CreateMock_WhenParameterTypeIsGenericInterface_MockIsCreated()
+        public void CreateMock_WhenParameterTypeIsGenericInterface_ThenMockIsCreated()
         {
             // Act
             var mock = Mock.Create<ITestGenericInterface<SimpleReferenceType, SimpleValueType>>();
@@ -51,7 +51,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void CreateMock_WhenParameterTypeIsBaseInterface_MockIsCreated()
+        public void CreateMock_WhenParameterTypeIsBaseInterface_ThenMockIsCreated()
         {
             // Arrange
             var mock = Mock.Create<IBaseInterface>();
@@ -67,7 +67,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void CreateMock_WhenParameterTypeIsDerivedInterface_MockIsCreated()
+        public void CreateMock_WhenParameterTypeIsDerivedInterface_ThenMockIsCreated()
         {
             // Arrange
             var mock = Mock.Create<IDerivedInterface>();

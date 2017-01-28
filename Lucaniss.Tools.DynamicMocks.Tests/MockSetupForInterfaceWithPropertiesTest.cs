@@ -12,7 +12,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
     public class MockSetupForInterfaceWithPropertiesTest
     {
         [TestMethod]
-        public void SetupGetter_WhenExpressionIsNotMemberExpression_ThrowException()
+        public void SetupGetter_WhenExpressionIsNotMemberExpression_ThenThrowException()
         {
             var mock = Mock.Create<ITestInterfaceWithProperties>();
 
@@ -27,7 +27,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupSetter_WhenExpressionIsNotMemberExpression_ThrowException()
+        public void SetupSetter_WhenExpressionIsNotMemberExpression_ThenThrowException()
         {
             var mock = Mock.Create<ITestInterfaceWithProperties>();
 
@@ -43,7 +43,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
 
 
         [TestMethod]
-        public void SetupGetter_ForValueType_WhenInvokeMethod_InvokeCallback()
+        public void SetupGetter_ForValueType_WhenInvokeMethod_ThenInvokeCallback()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithProperties>();
@@ -62,7 +62,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupGetter_ForReferenceType_WhenInvokeMethod_InvokeCallback()
+        public void SetupGetter_ForReferenceType_WhenInvokeMethod_ThenInvokeCallback()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithProperties>();
@@ -82,7 +82,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
 
 
         [TestMethod]
-        public void SetupSetter_ForValueType_WhenSetupMatch_InvokeCallback()
+        public void SetupSetter_ForValueType_WhenSetupMatch_ThenInvokeCallback()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithProperties>();
@@ -106,7 +106,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupSetter_ForReferenceType_WhenSetupMatch_InvokeCallback()
+        public void SetupSetter_ForReferenceType_WhenSetupMatch_ThenInvokeCallback()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithProperties>();
@@ -131,7 +131,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
 
 
         [TestMethod]
-        public void SetupSetter_ForValueType_WhenSetupNoMatch_ThrowException()
+        public void SetupSetter_ForValueType_WhenSetupNoMatch_ThenThrowException()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithProperties>();
@@ -154,7 +154,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupSetter_ForReferenceType_WhenSetupNoMatch_ThrowException()
+        public void SetupSetter_ForReferenceType_WhenSetupNoMatch_ThenThrowException()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithProperties>();

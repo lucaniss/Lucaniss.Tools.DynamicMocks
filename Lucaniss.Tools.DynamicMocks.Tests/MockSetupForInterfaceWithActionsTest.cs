@@ -13,7 +13,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
     public class MockSetupForInterfaceWithActionsTest
     {
         [TestMethod]
-        public void SetupAction_WithNoArguments_WhenInvokeMethod_InvokeCallback()
+        public void SetupAction_WithNoArguments_WhenInvokeMethod_ThenInvokeCallback()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithActions>();
@@ -33,7 +33,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
 
 
         [TestMethod]
-        public void SetupAction_WithArgumentOfValueType_WhenSetupMatch_InvokeCallbackAndVariableIsNotModified()
+        public void SetupAction_WithArgumentOfValueType_WhenSetupMatch_ThenInvokeCallbackAndVariableIsNotModified()
         {
             // Arrange            
             var mock = Mock.Create<ITestInterfaceWithActions>();
@@ -59,7 +59,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupAction_WithArgumentOfValueTypeByOut_WhenSetupMatch_InvokeCallbackAndVariableIsModified()
+        public void SetupAction_WithArgumentOfValueTypeByOut_WhenSetupMatch_ThenInvokeCallbackAndVariableIsModified()
         {
             // Arrange            
             var mock = Mock.Create<ITestInterfaceWithActions>();
@@ -85,7 +85,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupAction_WithArgumentOfValueTypeByRef_WhenSetupMatch_InvokeCallbackAndVariableIsModified()
+        public void SetupAction_WithArgumentOfValueTypeByRef_WhenSetupMatch_ThenInvokeCallbackAndVariableIsModified()
         {
             // Arrange            
             var mock = Mock.Create<ITestInterfaceWithActions>();
@@ -111,7 +111,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupAction_WithArgumentOfValueTypeByGeneric_WhenSetupMatch_InvokeCallbackAndVariableIsNotModified()
+        public void SetupAction_WithArgumentOfValueTypeByGeneric_WhenSetupMatch_ThenInvokeCallbackAndVariableIsNotModified()
         {
             // Arrange            
             var mock = Mock.Create<ITestInterfaceWithActions>();
@@ -138,7 +138,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
 
 
         [TestMethod]
-        public void SetupAction_WithArgumentOfReferenceType_WhenSetupMatch_InvokeCallbackAndVariableIsNotModified()
+        public void SetupAction_WithArgumentOfReferenceType_WhenSetupMatch_ThenInvokeCallbackAndVariableIsNotModified()
         {
             // Arrange            
             var mock = Mock.Create<ITestInterfaceWithActions>();
@@ -162,7 +162,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupAction_WithArgumentOfReferenceTypeByOut_WhenSetupMatch_InvokeCallbackAndVariableIsModified()
+        public void SetupAction_WithArgumentOfReferenceTypeByOut_WhenSetupMatch_ThenInvokeCallbackAndVariableIsModified()
         {
             // Arrange            
             var mock = Mock.Create<ITestInterfaceWithActions>();
@@ -188,7 +188,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupAction_WithArgumentOfReferenceTypeByRef_WhenSetupMatch_InvokeCallbackAndVariableIsModified()
+        public void SetupAction_WithArgumentOfReferenceTypeByRef_WhenSetupMatch_ThenInvokeCallbackAndVariableIsModified()
         {
             // Arrange            
             var mock = Mock.Create<ITestInterfaceWithActions>();
@@ -214,7 +214,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupAction_WithArgumentOfReferenceTypeByGeneric_WhenSetupMatch_InvokeCallbackAndVariableIsNotModified()
+        public void SetupAction_WithArgumentOfReferenceTypeByGeneric_WhenSetupMatch_ThenInvokeCallbackAndVariableIsNotModified()
         {
             // Arrange            
             var mock = Mock.Create<ITestInterfaceWithActions>();

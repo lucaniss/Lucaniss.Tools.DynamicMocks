@@ -12,7 +12,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
     public class MockSetupForInterfaceWithMethodsTest
     {
         [TestMethod]
-        public void SetupMethod_WhenExpressionIsNotMethodCallExpression_ThrowException()
+        public void SetupMethod_WhenExpressionIsNotMethodCallExpression_ThenThrowException()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithProperties>();
@@ -28,7 +28,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupMethod_WhenMethodSetupMatchAreMoreThanOnce_ThrowException()
+        public void SetupMethod_WhenMethodSetupMatchAreMoreThanOnce_ThenThrowException()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithActions>();
@@ -49,7 +49,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupMethod_WhenThereIsMoreDifferentSetupThanOne_InvokeCallback()
+        public void SetupMethod_WhenThereIsMoreDifferentSetupThanOne_ThenInvokeCallback()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithActions>();
@@ -84,7 +84,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
 
 
         [TestMethod]
-        public void SetupMethod_WithArgumentAsWildcard_WhenInvokeMethodGroup_InvokeCallback()
+        public void SetupMethod_WithArgumentAsWildcard_WhenInvokeMethodGroup_ThenInvokeCallback()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithActions>();
@@ -115,7 +115,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
 
 
         [TestMethod]
-        public void SetupMethod_WithArgumentOfValueType_WhenInvokeMethodGroupWithConflict_ThrowException()
+        public void SetupMethod_WithArgumentOfValueType_WhenInvokeMethodGroupWithConflict_ThenThrowException()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithActions>();
@@ -149,7 +149,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
         }
 
         [TestMethod]
-        public void SetupMethod_WithArgumentOfReferenceType_WhenInvokeMethodGroupWithConflict_ThrowException()
+        public void SetupMethod_WithArgumentOfReferenceType_WhenInvokeMethodGroupWithConflict_ThenThrowException()
         {
             // Arrange
             var mock = Mock.Create<ITestInterfaceWithActions>();
