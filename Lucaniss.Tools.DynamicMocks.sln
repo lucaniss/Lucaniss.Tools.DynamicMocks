@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucaniss.Tools.DynamicMocks", "Lucaniss.Tools.DynamicMocks\Lucaniss.Tools.DynamicMocks.csproj", "{951F5C0A-AEB9-4E80-9573-1599F48AEE31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucaniss.Tools.DynamicMocks.Tests", "Lucaniss.Tools.DynamicMocks.Tests\Lucaniss.Tools.DynamicMocks.Tests.csproj", "{D36378A3-8DAC-4557-83B9-3EF19EE61D6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{951F5C0A-AEB9-4E80-9573-1599F48AEE31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951F5C0A-AEB9-4E80-9573-1599F48AEE31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951F5C0A-AEB9-4E80-9573-1599F48AEE31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951F5C0A-AEB9-4E80-9573-1599F48AEE31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D36378A3-8DAC-4557-83B9-3EF19EE61D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D36378A3-8DAC-4557-83B9-3EF19EE61D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D36378A3-8DAC-4557-83B9-3EF19EE61D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D36378A3-8DAC-4557-83B9-3EF19EE61D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

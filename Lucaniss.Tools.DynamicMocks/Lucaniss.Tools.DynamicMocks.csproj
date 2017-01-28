@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{951F5C0A-AEB9-4E80-9573-1599F48AEE31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lucaniss.Tools.DynamicMocks</RootNamespace>
+    <AssemblyName>Lucaniss.Tools.DynamicMocks</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implementation\ArgValueMock.cs" />
+    <Compile Include="ArgValue.cs" />
+    <Compile Include="Exceptions\MockException.cs" />
+    <Compile Include="Exceptions\MockExceptionErrors.cs" />
+    <Compile Include="Exceptions\MockExceptionHelper.cs" />
+    <Compile Include="Extensions\ParameterInfoExtensions.cs" />
+    <Compile Include="IMockContainer.cs" />
+    <Compile Include="IMockBuilder.cs" />
+    <Compile Include="IMockObject.cs" />
+    <Compile Include="IMockSetupForAction.cs" />
+    <Compile Include="IMockSetupForFunction.cs" />
+    <Compile Include="IMockSetupForGetter.cs" />
+    <Compile Include="IMockSetupForSetter.cs" />
+    <Compile Include="IMockSetup.cs" />
+    <Compile Include="Mock.cs" />
+    <Compile Include="Implementation\MSILCodeGenerator.cs" />
+    <Compile Include="Implementation\MockContainer.cs" />
+    <Compile Include="Implementation\MockBuilder.cs" />
+    <Compile Include="Consts\MockConsts.cs" />
+    <Compile Include="Implementation\MockObject.cs" />
+    <Compile Include="Implementation\MockSetup.cs" />
+    <Compile Include="Implementation\MockSetupForAction.cs" />
+    <Compile Include="Implementation\MockSetupForFunction.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Arg.cs" />
+    <Compile Include="Implementation\MockSetupForGetter.cs" />
+    <Compile Include="Implementation\MockSetupForSetter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ExceptionResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ExceptionResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
