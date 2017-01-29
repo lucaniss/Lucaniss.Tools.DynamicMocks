@@ -28,7 +28,7 @@ namespace Lucaniss.Tools.DynamicMocks.Extensions
 
         public static String SafeGetTypeName(this Type type)
         {
-            return SafeGetType(type).IsGenericParameter ? type.Name : type.FullName;
+            return SafeGetType(type).IsGenericParameter ? type.Name : type.AssemblyQualifiedName;
         }
 
         public static Boolean IsValueOrPrimitiveType(this Type parameterInfo)

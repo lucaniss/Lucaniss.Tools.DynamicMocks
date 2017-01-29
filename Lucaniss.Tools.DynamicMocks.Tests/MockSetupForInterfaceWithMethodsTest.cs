@@ -92,25 +92,28 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
             var invocationHandler1 = new InvocationHandler();
             var invocationHandler2 = new InvocationHandler();
 
-            var parameter = new SimpleValueType(Guid.NewGuid());
+            var parameterValue = new SimpleValueType(Guid.NewGuid());
 
             mock.SetupMethod(m => m.Action(Arg.Any<SimpleValueType>())).Callback<SimpleValueType>(argument =>
             {
                 invocationHandler1.IsInvoked = true;
+                invocationHandler1.SimpleValueTypeCheck = argument;
             });
-
-            var value = Arg.Any<SimpleReferenceType>();
+            
             mock.SetupMethod(m => m.Action(Arg.Any<SimpleReferenceType>())).Callback<SimpleReferenceType>(argument =>
             {
                 invocationHandler2.IsInvoked = true;
+                invocationHandler2.SimpleReferenceTypeCheck = argument;
             });
 
             // Act           
-            mock.Instance.Action(parameter);
+            mock.Instance.Action(parameterValue);
 
             // Assert
             Assert.IsTrue(invocationHandler1.IsInvoked);
             Assert.IsFalse(invocationHandler2.IsInvoked);
+
+            Assert.AreEqual(parameterValue, invocationHandler1.SimpleValueTypeCheck);            
         }
 
 
@@ -180,6 +183,29 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
 
             // TODO: Jest to znane zachowanie (Wywo³uj¹c interceptor tracimy informacjê o tym czy argument zosta³ przekazany przez referencjê czy nie).
             // TODO: Wymaga zmiany w wewnêtrznej (MSIL) implementacji mocka.
+        }
+
+
+        [TestMethod]
+        public void SetupMethod_WithArgumentOfReferenceType_WhenArgumentIsNull_ThenInvokeCallback()
+        {
+            // Arrange
+            var mock = Mock.Create<ITestInterfaceWithActions>();
+
+            var invocationHandler = new InvocationHandler();
+
+            mock.SetupMethod(m => m.Action(Arg.Any<SimpleReferenceType>())).Callback<SimpleReferenceType>(argument =>
+            {
+                invocationHandler.IsInvoked = true;
+                invocationHandler.SimpleReferenceTypeCheck = argument;
+            });
+
+            // Act
+            mock.Instance.Action(null);
+
+            // Assert
+            Assert.IsTrue(invocationHandler.IsInvoked);
+            Assert.AreEqual(null, invocationHandler.SimpleReferenceTypeCheck);
         }
     }
 }

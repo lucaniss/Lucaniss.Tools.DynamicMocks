@@ -30,7 +30,7 @@ namespace Lucaniss.Tools.DynamicMocks.Implementation
 
         public Object InvokeInterceptorMethod(String methodName, String[] argumentTypes, Object[] argumentValues)
         {
-            var setup = FindSetups(methodName, argumentValues).ToList();
+            var setup = FindSetups(methodName, argumentTypes, argumentValues).ToList();
 
             if (!setup.Any())
             {
@@ -53,10 +53,10 @@ namespace Lucaniss.Tools.DynamicMocks.Implementation
         }
 
 
-        private IEnumerable<IMockSetup> FindSetups(String methodName, IReadOnlyList<Object> argumentValues)
+        private IEnumerable<IMockSetup> FindSetups(String methodName, IReadOnlyList<String> argumentTypes, IReadOnlyList<Object> argumentValues)
         {
             return Setups.Where(s => IsMethodNameMatch(s, methodName)
-                && IsParametersAndArgumentsTypesMatch(s.ParameterTypes, argumentValues.Select(e => e.GetType()).ToList())
+                && IsParametersAndArgumentsTypesMatch(s.ParameterTypes, argumentTypes, argumentValues)
                 && IsParametersAndArgumentsValuesMatch(s.ParameterValues, argumentValues));
         }
 
@@ -65,7 +65,7 @@ namespace Lucaniss.Tools.DynamicMocks.Implementation
             return setup.MethodInfo.Name.Equals(methodName);
         }
 
-        private static Boolean IsParametersAndArgumentsTypesMatch(IReadOnlyList<Type> parameterTypes, IReadOnlyList<Type> argumentTypes)
+        private static Boolean IsParametersAndArgumentsTypesMatch(IReadOnlyList<Type> parameterTypes, IReadOnlyList<String> argumentTypes, IReadOnlyList<Object> argumentValues)
         {
             if (parameterTypes.Count != argumentTypes.Count)
             {
@@ -74,9 +74,12 @@ namespace Lucaniss.Tools.DynamicMocks.Implementation
 
             for (var i = 0; i < parameterTypes.Count; i++)
             {
-                if (!parameterTypes[i].SafeGetType().IsAssignableFrom(argumentTypes[i].SafeGetType()))
+                if (!parameterTypes[i].SafeGetType().IsAssignableFrom(argumentValues[i]?.GetType().SafeGetType()))
                 {
-                    return false;
+                    if (parameterTypes[i].SafeGetType().AssemblyQualifiedName != argumentTypes[i])
+                    {
+                        return false;
+                    }
                 }
             }
 
@@ -85,12 +88,22 @@ namespace Lucaniss.Tools.DynamicMocks.Implementation
 
         private static Boolean IsParametersAndArgumentsValuesMatch(IReadOnlyList<Object> parameterValues, IReadOnlyList<Object> argumentValues)
         {
+            if (parameterValues.Count != argumentValues.Count)
+            {
+                return false;
+            }
+
             for (var i = 0; i < parameterValues.Count; i++)
             {
+                if (argumentValues[i] == null)
+                {
+                    continue;
+                }
+
                 var argumentValueMock = parameterValues[i] as ArgValueMock;
                 if (argumentValueMock != null && argumentValueMock.Type.IsInstanceOfType(argumentValues[i]))
                 {
-                    return true;
+                    continue;
                 }
 
                 if (!parameterValues[i].Equals(argumentValues[i]))
