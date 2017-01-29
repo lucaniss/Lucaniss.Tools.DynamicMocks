@@ -42,6 +42,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Implementation\ArgValueMock.cs" />
     <Compile Include="ArgValue.cs" />
     <Compile Include="Exceptions\MockException.cs" />

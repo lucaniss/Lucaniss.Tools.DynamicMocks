@@ -8,9 +8,12 @@ namespace Lucaniss.Tools.DynamicMocks.Extensions
     {
         public static Type SafeGetType(this ParameterInfo parameterInfo)
         {
-            return parameterInfo.ParameterType.IsByRef ?
-                parameterInfo.ParameterType.GetElementType() :
-                parameterInfo.ParameterType;
+            return parameterInfo.ParameterType.SafeGetType();
+        }
+
+        public static String SafeGetTypeName(this ParameterInfo parameterInfo)
+        {
+            return parameterInfo.ParameterType.SafeGetTypeName();
         }
 
         public static Boolean IsValueOrPrimitiveType(this ParameterInfo parameterInfo)

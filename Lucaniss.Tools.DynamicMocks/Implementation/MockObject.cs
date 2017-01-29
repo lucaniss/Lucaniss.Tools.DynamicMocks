@@ -74,9 +74,9 @@ namespace Lucaniss.Tools.DynamicMocks.Implementation
 
             for (var i = 0; i < parameterTypes.Count; i++)
             {
-                if (!parameterTypes[i].SafeGetType().IsAssignableFrom(argumentValues[i]?.GetType().SafeGetType()))
+                if (!parameterTypes[i].SafeGetType().IsAssignableFrom(argumentValues[i]?.SafeGetType()))
                 {
-                    if (parameterTypes[i].SafeGetType().AssemblyQualifiedName != argumentTypes[i])
+                    if (parameterTypes[i].SafeGetTypeName() != argumentTypes[i])
                     {
                         return false;
                     }
@@ -101,7 +101,7 @@ namespace Lucaniss.Tools.DynamicMocks.Implementation
                 }
 
                 var argumentValueMock = parameterValues[i] as ArgValueMock;
-                if (argumentValueMock != null && argumentValueMock.Type.IsInstanceOfType(argumentValues[i]))
+                if (argumentValueMock != null && argumentValueMock.Type.IsAssignableFrom(argumentValues[i].SafeGetType()))
                 {
                     continue;
                 }
