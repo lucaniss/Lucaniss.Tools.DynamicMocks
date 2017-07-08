@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package>
+  <metadata>
+    <id>Lucaniss.Tools.DynamicMocks</id>
+    <version>1.0.0.1</version>
+    <title>Dynamic Mocks</title>
+    <description>Simple and lightweight library for dynamically create unit test interface mocks</description>
+    <authors>Lucaniss</authors>
+    <owners>Lucaniss</owners>
+    <projectUrl>https://github.com/lucaniss</projectUrl>
+    <iconUrl>https://avatars0.githubusercontent.com/u/5402523?v=3</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>    
+    <copyright>Copyright 2017 Lucaniss</copyright>
+    <tags>mock unit test dynamic lucaniss</tags>
+  </metadata>
+</package>
