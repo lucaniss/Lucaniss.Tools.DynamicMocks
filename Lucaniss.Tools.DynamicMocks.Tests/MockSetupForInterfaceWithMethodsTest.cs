@@ -99,7 +99,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
                 invocationHandler1.IsInvoked = true;
                 invocationHandler1.SimpleValueTypeCheck = argument;
             });
-            
+
             mock.SetupMethod(m => m.Action(Arg.Any<SimpleReferenceType>())).Callback<SimpleReferenceType>(argument =>
             {
                 invocationHandler2.IsInvoked = true;
@@ -113,7 +113,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
             Assert.IsTrue(invocationHandler1.IsInvoked);
             Assert.IsFalse(invocationHandler2.IsInvoked);
 
-            Assert.AreEqual(parameterValue, invocationHandler1.SimpleValueTypeCheck);            
+            Assert.AreEqual(parameterValue, invocationHandler1.SimpleValueTypeCheck);
         }
 
 
@@ -148,7 +148,7 @@ namespace Lucaniss.Tools.DynamicMocks.Tests
             AssertException.Throws<MockException>(action, e => e.Error == MockExceptionErrors.MethodSetupConflict);
 
             // TODO: Jest to znane zachowanie (Wywo³uj¹c interceptor tracimy informacjê o tym czy argument zosta³ przekazany przez referencjê czy nie).
-            // TODO: Wymaga zmiany w wewnêtrznej (MSIL) implementacji mocka.
+            // TODO: Wymaga zmiany w wewnêtrznej implementacji mocka (MSIL).
         }
 
         [TestMethod]

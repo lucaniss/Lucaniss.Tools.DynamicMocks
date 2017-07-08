@@ -19,7 +19,7 @@ namespace Lucaniss.Tools.DynamicMocks.Implementation
 
         public void Callback(TResult value)
         {
-            FunctionDelegate = (argumentValues) => value;
+            FunctionDelegate = argumentValues => value;
         }
 
         public void Callback(Func<TResult> mockFunction)
