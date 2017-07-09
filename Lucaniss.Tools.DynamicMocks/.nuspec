@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Lucaniss.Tools.DynamicMocks</id>
-    <version>1.0.0.1</version>
+    <version>1.0.0.2</version>
     <title>Dynamic Mocks</title>
     <description>Simple and lightweight library for dynamically create unit test interface mocks</description>
     <authors>Lucaniss</authors>
